@@ -70,9 +70,7 @@ function Alchemist.on_start_crafting(event_type, crafting_type)
 end
 
 function Alchemist.on_end_crafting(event_type, crafting_type)
-    if crafting_type == CRAFTING_TYPE_ALCHEMY then
-        Alchemist.listview.control:SetHidden(true)
-    end
+    Alchemist.listview.control:SetHidden(true)
 end
 
 function Alchemist.on_craft_started(event_type, crafting_type)
