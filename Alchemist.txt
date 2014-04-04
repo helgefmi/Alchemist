@@ -1,0 +1,10 @@
+## Title: Alchemist
+## APIVersion: 100003
+
+Alchemist.lua
+lib/Batteries.lua
+lib/Reagent.lua
+lib/Algorithm.lua
+lib/Inventory.lua
+lib/List.lua
+Alchemist.xml

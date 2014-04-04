@@ -1,0 +1,7 @@
+<GuiXml>
+    <Controls>
+        <TopLevelControl name="AlchemistControl" mouseEnabled="true">
+			<Dimensions x="960" y="540" />
+        </TopLevelControl>
+	</Controls>
+</GuiXml>
