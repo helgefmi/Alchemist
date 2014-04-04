@@ -23,6 +23,7 @@ local function element_is_in_table(item, tbl)
             return true
         end
     end
+    return false
 end
 
 -- Stolen from http://lua-users.org/wiki/TableUtils

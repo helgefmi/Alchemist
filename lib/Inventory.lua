@@ -1,3 +1,4 @@
+-- all reagents {{{
 local all_reagents = {
     ["Blessed Thistle"] = {
         "Restore Stamina",
@@ -32,7 +33,7 @@ local all_reagents = {
     ["Dragonthorn"] = {
         "Increase Weapon Power",
         "Restore Stamina",
-        "Weapon Critical",
+        "Weapon Crit",
         "Lower Armor"
     },
     ["Emetic Russula"] = {
@@ -45,12 +46,12 @@ local all_reagents = {
         "Increase Armor",
         "Lower Weapon Power",
         "Ravage Stamina",
-        "Lower Weapon Critical"
+        "Lower Weapon Crit"
     },
     ["Lady's Smock"] = {
         "Increase Spell Power",
         "Restore Magicka",
-        "Spell Critical",
+        "Spell Crit",
         "Lower Spell Resist"
     },
     ["Luminous Russula"] = {
@@ -66,7 +67,7 @@ local all_reagents = {
         "Lower Weapon Power"
     },
     ["Namira's Rot"] = {
-        "Spell Critical",
+        "Spell Crit",
         "Invisible",
         "Speed",
         "Unstoppable"
@@ -74,8 +75,8 @@ local all_reagents = {
     ["Nirnroot"] = {
         "Invisible",
         "Ravage Health",
-        "Lower Weapon Critical",
-        "Lower Spell Critical"
+        "Lower Weapon Crit",
+        "Lower Spell Crit"
     },
     ["Stinkhorn"] = {
         "Increase Weapon Power",
@@ -91,23 +92,24 @@ local all_reagents = {
     },
     ["Water Hyacinth"] = {
         "Restore Health",
-        "Weapon Critical",
-        "Spell Critical",
+        "Weapon Crit",
+        "Spell Crit",
         "Stun"
     },
     ["White Cap"] = {
         "Increase Spell Resist",
         "Lower Spell Power",
         "Ravage Magicka",
-        "Lower Spell Critical"
+        "Lower Spell Crit"
     },
     ["Wormwood"] = {
-        "Weapon Critical",
+        "Weapon Crit",
         "Detection",
         "Unstoppable",
         "Reduce Speed"
     }
 }
+-- }}}
 
 local Inventory = {}
 
@@ -127,14 +129,18 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
     -- and set them to "not discovered". This is indicated by the *value* in the `traits` table.
     local traits = {}
     local all_traits = all_reagents[name]
+    assert(#all_traits == 4)
     for _, trait in pairs(all_traits) do
         -- key = trait name
         -- value = is discovered
+        assert(traits[trait] == nil)
         traits[trait] = Alchemist.Batteries.element_is_in_table(trait, known_traits)
     end
     
     assert(self.reagents[name] == nil)
     self.reagents[name] = Alchemist.Reagent:new(name, qty, traits, bag_id, slot_index)
+    
+    return self.reagents[name]
 end
 
  function Inventory:remove_reagent(reagent)
@@ -170,11 +176,13 @@ function Inventory:populate_from_control(control)
             local bag_id = reagent_data.bagId
             local slot_index = reagent_data.slotIndex
             local qty = reagent_data.stackCount
+            d(name)
       
             local t1, _, _, t2, _, _, t3, _, _, t4, _, _ = GetAlchemyItemTraits(bag_id, slot_index)
             local traits = {t1, t2, t3, t4}
             
-            self:add_reagent(name, qty, traits, bag_id, slot_index)
+            local reagent = self:add_reagent(name, qty, traits, bag_id, slot_index)
+            d(reagent)
         end
     end
 end

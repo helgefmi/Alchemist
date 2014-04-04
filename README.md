@@ -15,7 +15,7 @@ How does it work?
 
 The addon will activate as soon as you interact (click on) an Alchemy Station. When you do that, an extra window will open up with a list of optimal reagent combinations, in order.
 
-![Screenshot](http://i.imgur.com/dTs7eOY.png)
+<img src="http://i.imgur.com/ue3qn6F.png" width="700px" alt="Screenshot" />
 
 TODO / ideas
 ------------
