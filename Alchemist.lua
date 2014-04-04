@@ -9,14 +9,16 @@ function Alchemist.initialize()
         left = 970,
         top = 40,
     })
-    --Alchemist.main_window.control:SetHidden(true)
+    Alchemist.main_window.control:SetHidden(true)
     
+    --[[
     for i = 1, 10 do
         Alchemist.main_window:add_message("|cff0000Hello World")
         Alchemist.main_window:add_message("|c00ff00This is " .. i)
         Alchemist.main_window:add_message("|c0000ffLorem ipsum sit amet etc. etc.")
         Alchemist.main_window:add_message("")
     end
+    ]]
     
     EVENT_MANAGER:RegisterForEvent("Alchemist", EVENT_CRAFTING_STATION_INTERACT, Alchemist.on_start_crafting)
     EVENT_MANAGER:RegisterForEvent("Alchemist", EVENT_END_CRAFTING_STATION_INTERACT, Alchemist.on_end_crafting)
@@ -38,6 +40,7 @@ function Alchemist.print_combinations()
 
     if #combinations == 0 then
         mw:add_message("Alchemist: No discoveries available.")
+        d(mw.lines[1])
     else
         mw:add_message(#combinations .. " combinations available!")
         mw:add_message("")
