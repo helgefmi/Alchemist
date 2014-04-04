@@ -69,16 +69,22 @@ function Alchemist.on_start_crafting(event_type, crafting_type)
     end
 end
 
-function Alchemist.on_end_crafting()
-    if Alchemist.initialized then
+function Alchemist.on_end_crafting(event_type, crafting_type)
+    if crafting_type == CRAFTING_TYPE_ALCHEMY then
         Alchemist.listview.control:SetHidden(true)
     end
 end
 
-function Alchemist.on_craft_started()
+function Alchemist.on_craft_started(event_type, crafting_type)
+    if crafting_type == CRAFTING_TYPE_ALCHEMY then
+        
+    end
 end
 
-function Alchemist.on_craft_completed()
+function Alchemist.on_craft_completed(event_type, crafting_type)
+    if crafting_type == CRAFTING_TYPE_ALCHEMY then
+        Alchemist.print_combinations()
+    end
 end
 
 local function on_addon_load(eventCode, addOnName)

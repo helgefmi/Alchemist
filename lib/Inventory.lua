@@ -176,13 +176,11 @@ function Inventory:populate_from_control(control)
             local bag_id = reagent_data.bagId
             local slot_index = reagent_data.slotIndex
             local qty = reagent_data.stackCount
-            d(name)
       
             local t1, _, _, t2, _, _, t3, _, _, t4, _, _ = GetAlchemyItemTraits(bag_id, slot_index)
             local traits = {t1, t2, t3, t4}
             
             local reagent = self:add_reagent(name, qty, traits, bag_id, slot_index)
-            d(reagent)
         end
     end
 end
