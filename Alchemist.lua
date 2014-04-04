@@ -40,7 +40,6 @@ function Alchemist.print_combinations()
 
     if #combinations == 0 then
         mw:add_message("Alchemist: No discoveries available.")
-        d(mw.lines[1])
     else
         mw:add_message(#combinations .. " combinations available!")
         mw:add_message("")
