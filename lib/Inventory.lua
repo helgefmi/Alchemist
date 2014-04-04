@@ -123,9 +123,13 @@ function Inventory:new(control)
 end
 
 function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
+    -- Adds a reagent to the current inventory. It will also add traits that we don't know about yet,
+    -- and set them to "not discovered". This is indicated by the *value* in the `traits` table.
     local traits = {}
     local all_traits = all_reagents[name]
     for _, trait in pairs(all_traits) do
+        -- key = trait name
+        -- value = is discovered
         traits[trait] = Alchemist.Batteries.element_is_in_table(trait, known_traits)
     end
     
@@ -134,6 +138,7 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
 end
 
  function Inventory:remove_reagent(reagent)
+    -- will weight decrement qty or remove the reagent all together.
     if reagent.qty == 1 then
         self.reagents[reagent.name] = nil
     else
@@ -154,6 +159,7 @@ function Inventory:get_reagent_names()
 end
 
 function Inventory:populate_from_control(control)
+    -- populates self.reagents using ZO API.
     local list_data = control["list"]["data"]
     for _, list_item in pairs(list_data) do
         local type_id = list_item.typeId

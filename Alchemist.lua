@@ -1,22 +1,23 @@
 Alchemist = {
     version = 0.01,
-    main_window = nil,
+    listview = nil,
 }
 
 function Alchemist.initialize()
-    Alchemist.main_window = Unicorn.ListView.new(AlchemistControl, {
+    Alchemist.listview = Unicorn.ListView.new(AlchemistControl, {
+        title = "Alchemist",
         width = 350,
         left = 970,
         top = 40,
     })
-    Alchemist.main_window.control:SetHidden(true)
+    Alchemist.listview.control:SetHidden(true)
     
     --[[
     for i = 1, 10 do
-        Alchemist.main_window:add_message("|cff0000Hello World")
-        Alchemist.main_window:add_message("|c00ff00This is " .. i)
-        Alchemist.main_window:add_message("|c0000ffLorem ipsum sit amet etc. etc.")
-        Alchemist.main_window:add_message("")
+        Alchemist.listview:add_message("|cff0000Hello World")
+        Alchemist.listview:add_message("|c00ff00This is " .. i)
+        Alchemist.listview:add_message("|c0000ffLorem ipsum sit amet etc. etc.")
+        Alchemist.listview:add_message("")
     end
     ]]
     
@@ -33,7 +34,7 @@ function Alchemist.print_combinations()
     local inventory = Alchemist.Inventory:new(ALCHEMY["inventory"])
     combinations = Alchemist.Algorithm.get_optimal_combinations(inventory, 2)
     
-    local mw = Alchemist.main_window
+    local mw = Alchemist.listview
     
     mw:clear()
     mw.control:SetHidden(false)
@@ -70,7 +71,7 @@ end
 
 function Alchemist.on_end_crafting()
     if Alchemist.initialized then
-        Alchemist.main_window.control:SetHidden(true)
+        Alchemist.listview.control:SetHidden(true)
     end
 end
 

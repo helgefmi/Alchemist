@@ -1,4 +1,5 @@
 local function get_discovered_traits(reagents)
+    -- compare reagents and find traits that would be discovered if these reagents was combined.
     local discoveries = {}
 
     for _, r1 in pairs(reagents) do
@@ -20,6 +21,8 @@ local function get_discovered_traits(reagents)
 end
 
 local function get_best_combination(inventory, max_reagents)
+    -- given a set of reagents (inventory), return the best possible combination, maximizing on
+    -- number of new discoveries.
     if inventory:num_reagents() < 2 then
         return
     end
@@ -49,6 +52,7 @@ local function get_best_combination(inventory, max_reagents)
 end
 
 local function get_optimal_combinations(inventory, max_reagents)
+    -- returns a list of combinations that can be done in order, to maximize discovery of traits.
     local ret = {}
 
     local combination
