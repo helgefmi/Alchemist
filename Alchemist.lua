@@ -4,21 +4,19 @@ Alchemist = {
 }
 
 function Alchemist.initialize()
-    Alchemist.main_window = Alchemist.ListView:new(AlchemistControl, {
+    Alchemist.main_window = Unicorn.ListView.new(AlchemistControl, {
         width = 350,
         left = 970,
         top = 40,
     })
-    Alchemist.main_window.control:SetHidden(true)
+    --Alchemist.main_window.control:SetHidden(true)
     
-    --[[
-    for i = 0, 6 do
+    for i = 1, 10 do
         Alchemist.main_window:add_message("|cff0000Hello World")
-        Alchemist.main_window:add_message("|c00ff00This is line 2")
+        Alchemist.main_window:add_message("|c00ff00This is " .. i)
         Alchemist.main_window:add_message("|c0000ffLorem ipsum sit amet etc. etc.")
         Alchemist.main_window:add_message("")
     end
-    ]]
     
     EVENT_MANAGER:RegisterForEvent("Alchemist", EVENT_CRAFTING_STATION_INTERACT, Alchemist.on_start_crafting)
     EVENT_MANAGER:RegisterForEvent("Alchemist", EVENT_END_CRAFTING_STATION_INTERACT, Alchemist.on_end_crafting)
