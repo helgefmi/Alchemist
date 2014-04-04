@@ -126,7 +126,7 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
     local traits = {}
     local all_traits = all_reagents[name]
     for _, trait in pairs(all_traits) do
-        traits[trait] = not Alchemist.Batteries.element_is_in_table(trait, known_traits)
+        traits[trait] = Alchemist.Batteries.element_is_in_table(trait, known_traits)
     end
     
     assert(self.reagents[name] == nil)
