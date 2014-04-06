@@ -5,109 +5,109 @@ local all_reagents = {
             "Restore Stamina",
             "Increase Weapon Power",
             "Speed",
-            "Ravage Health"
+            "Ravage Health",
         },
         ["Blue Entoloma"] = {
             "Restore Health",
             "Invisible",
             "Lower Spell Power",
-            "Ravage Magicka"
+            "Ravage Magicka",
         },
         ["Bugloss"] = {
             "Increase Spell Resist",
             "Restore Health",
             "Restore Magicka",
-            "Lower Spell Power"
+            "Lower Spell Power",
         },
         ["Columbine"] = {
             "Restore Health",
             "Restore Stamina",
             "Restore Magicka",
-            "Unstoppable"
+            "Unstoppable",
         },
         ["Corn Flower"] = {
             "Restore Magicka",
             "Increase Spell Power",
             "Detection",
-            "Ravage Health"
+            "Ravage Health",
         },
         ["Dragonthorn"] = {
             "Increase Weapon Power",
             "Restore Stamina",
             "Weapon Crit",
-            "Lower Armor"
+            "Lower Armor",
         },
         ["Emetic Russula"] = {
             "Ravage Health",
             "Ravage Stamina",
             "Ravage Magicka",
-            "Stun"
+            "Stun",
         },
         ["Imp Stool"] = {
             "Increase Armor",
             "Lower Weapon Power",
             "Ravage Stamina",
-            "Lower Weapon Crit"
+            "Lower Weapon Crit",
         },
         ["Lady's Smock"] = {
             "Increase Spell Power",
             "Restore Magicka",
             "Spell Crit",
-            "Lower Spell Resist"
+            "Lower Spell Resist",
         },
         ["Luminous Russula"] = {
             "Restore Health",
             "Ravage Stamina",
             "Lower Weapon Power",
-            "Reduce Speed"
+            "Reduce Speed",
         },
         ["Mountain Flower"] = {
             "Increase Armor",
             "Restore Health",
             "Restore Stamina",
-            "Lower Weapon Power"
+            "Lower Weapon Power",
         },
         ["Namira's Rot"] = {
             "Spell Crit",
             "Invisible",
             "Speed",
-            "Unstoppable"
+            "Unstoppable",
         },
         ["Nirnroot"] = {
             "Invisible",
             "Ravage Health",
             "Lower Weapon Crit",
-            "Lower Spell Crit"
+            "Lower Spell Crit",
         },
         ["Stinkhorn"] = {
             "Increase Weapon Power",
             "Lower Armor",
             "Ravage Health",
-            "Ravage Stamina"
+            "Ravage Stamina",
         },
         ["Violet Coprinus"] = {
             "Increase Spell Power",
             "Lower Spell Resist",
             "Ravage Health",
-            "Ravage Magicka"
+            "Ravage Magicka",
         },
         ["Water Hyacinth"] = {
             "Restore Health",
             "Weapon Crit",
             "Spell Crit",
-            "Stun"
+            "Stun",
         },
         ["White Cap"] = {
             "Increase Spell Resist",
             "Lower Spell Power",
             "Ravage Magicka",
-            "Lower Spell Crit"
+            "Lower Spell Crit",
         },
         ["Wormwood"] = {
             "Weapon Crit",
             "Detection",
             "Unstoppable",
-            "Reduce Speed"
+            "Reduce Speed",
         }
     },
     german = {
@@ -115,111 +115,221 @@ local all_reagents = {
             "Leben wiederherstellen",
             "Magicka wiederherstellen",
             "Ausdauer wiederherstellen",
-            "Sicherer Stand"
+            "Sicherer Stand",
         },
         ["Benediktenkraut"] = {
             "Ausdauer wiederherstellen",
             "Erhöht Waffenkraft",
             "Lebensverwüstung",
-            "Erhöht Geschwindigkeit"
+            "Erhöht Geschwindigkeit",
         },
         ["Bergblume"] = {
             "Erhöht Rüstung",
             "Leben wiederherstellen",
             "Verringert Waffenkraft",
-            "Ausdauer wiederherstellen"
+            "Ausdauer wiederherstellen",
         },
         ["Blauer Glöckling"] = {
             "Magickaverwüstung",
             "Verringert Magiekraft",
             "Leben wiederherstellen",
-            "Unsichtbarkeit"
+            "Unsichtbarkeit",
         },
         ["Drachendorn"] = {
             "Erhöht Waffenkraft",
             "Ausdauer wiederherstellen",
             "Verringert Rüstung",
-            "Kritische Waffentreffer"
+            "Kritische Waffentreffer",
         },
         ["Koboldschemel"] = {
             "Reduziert Waffenkraft",
             "Erhöht Rüstung",
             "Ausdauerverwüstung",
-            "Reduziert Kritische Waffentreffer"
+            "Reduziert Kritische Waffentreffer",
         },
         ["Kornblume"] = {
             "Magicka wiederherstellen",
             "Erhöht Magiekraft",
             "Lebensverwüstung",
-            "Detektion"
+            "Detektion",
         },
         ["Leuchttäubling"] = {
             "Ausdauerverwüstung",
             "Leben wiederherstellen",
             "Reduziert Waffenkraft",
-            "Reduziert Geschwindigkeit"
+            "Reduziert Geschwindigkeit",
         },
         ["Namiras Fäulnis"] = {
             "Kritische Magietreffer",
             "Unsichtbarkeit",
             "Erhöht Geschwindigkeit",
-            "Sicherer Stand"
+            "Sicherer Stand",
         },
         ["Nirnwurz"] = {
             "Lebensverwüstung",
             "Verringert Kritische Magietreffer",
             "Verringert Kritische Waffentreffer",
-            "Unsichtbarkeit"
+            "Unsichtbarkeit",
         },
         ["Speitäubling"] = {
             "Lebensverwüstung",
             "Ausdauerverwüstung",
             "Magickaverwüstung",
-            "Betäubung"
+            "Betäubung",
         },
         ["Stinkmorchel"] = {
             "Verringert Rüstung",
             "Erhöht Waffenkraft",
             "Lebensverwüstung",
-            "Ausdauerverwüstung"
+            "Ausdauerverwüstung",
         },
         ["Violetter Tintling"] = {
             "Verringert Magieresistenz",
             "Erhöht Magiekraft",
             "Lebensverwüstung",
-            "Magickaverwüstung"
+            "Magickaverwüstung",
         },
         ["Wasserhyazinthe"] = {
             "Leben wiederherstellen",
             "Kritische Magietreffer",
             "Kritische Waffentreffer",
-            "Betäubung"
+            "Betäubung",
         },
         ["Weißkappe"] = {
             "Reduziert Magiekraft",
             "Magickaverwüstung",
             "Erhöht Magieresistenz",
-            "Reduziert Kritische Magietreffer"
+            "Reduziert Kritische Magietreffer",
         },
         ["Wermut"] = {
             "Kritische Waffentreffer",
             "Reduziert Geschwindigkeit",
             "Detektion",
-            "Sicherer Stand"
+            "Sicherer Stand",
         },
         ["Wiesenschaumkraut"] = {
             "Erhöht Magiekraft",
             "Magicka wiederherstellen",
             "Verringert Magieresistenz",
-            "Kritische Magietreffer"
+            "Kritische Magietreffer",
         },
         ["Wolfsauge"] = {
             "Erhöht Magieresistenz",
             "Leben wiederherstellen",
             "Verringert Magiekraft",
-            "Magicka wiederherstellen"
+            "Magicka wiederherstellen",
         }
-    }
+    },
+    french = {
+        ["Chardon béni"] = {
+            "Rend de la vigueur",
+            "Augmente la puissance de l'arme",
+            "Vitesse",
+            "Réduit la santé",
+        },
+        ["Entoloma"] = {
+            "Rend de la santé",
+            "Invisible",
+            "Diminue la puissance des sorts",
+            "Réduit la magie",
+        },
+        ["Noctuelle"] = {
+            "Augmente la résistance aux sorts",
+            "Rend de la santé",
+            "Rend de la magie",
+            "Diminue la puissance des sorts",
+        },
+        ["Ancolie"] = {
+            "Rend de la santé",
+            "Rend de la vigueur",
+            "Rend de la magie",
+            "Implacable",
+        },
+        ["Bleuet"] = {
+            "Rend de la magie",
+            "Augmente la puissance des sorts",
+            "Détection",
+            "Réduit la santé",
+        },
+        ["Epine-de-Dragon"] = {
+            "Augmente la puissance de l'arme",
+            "Rend de la vigueur",
+            "Arme critique",
+            "Diminue l'armure",
+        },
+        ["Russule émétique"] = {
+            "Réduit la santé",
+            "Réduit la vigueur",
+            "Réduit la magie",
+            "Assomer",
+        },
+        ["Pied de lutin"] = {
+            "Augmente l'armure",
+            "Diminue la puissance de l'arme",
+            "Réduit la vigueur",
+            "Diminue l'arme critique",
+        },
+        ["Cardamine des Prés"] = {
+            "Augmente la puissance des sorts",
+            "Rend de la magie",
+            "Sort critique",
+            "Diminue la résistance aux sorts",
+        },
+        ["Russule phosphorescente"] = {
+            "Rend de la santé",
+            "Réduit la vigueur",
+            "Diminue la puissance de l'arme",
+            "Réduit la vitesse",
+        },
+        ["Lys des Cimes"] = {
+            "Augmente l'armure",
+            "Rend de la santé",
+            "Rend de la vigueur",
+            "Diminue la puissance de l'arme",
+        },
+        ["Truffe de Namira"] = {
+            "Sort critique",
+            "Invisible",
+            "Vitesse",
+            "Implacable",
+        },
+        ["Nirnrave"] = {
+            "Invisible",
+            "Réduit la santé",
+            "Diminue l'arme critique",
+            "Diminue les sorts critique",
+        },
+        ["Mutinus Elégans"] = {
+            "Augmente la puissance de l'arme",
+            "Diminue l'armure",
+            "Réduit la santé",
+            "Réduit la vigueur",
+        },
+        ["Coprin violet"] = {
+            "Augmente la puissance des sorts",
+            "Diminue la résistance aux sorts",
+            "Réduit la santé",
+            "Réduit la magie",
+        },
+        ["Jacinthe d'eau"] = {
+            "Rend de la santé",
+            "Arme critique",
+            "Sort critique",
+            "Assomer",
+        },
+        ["Chapeau blanc"] = {
+            "Augmente la résistance aux sorts",
+            "Diminue la puissance des sorts",
+            "Réduit la magie",
+            "Diminue les sorts critique",
+        },
+        ["Absinthe"] = {
+            "Arme critique",
+            "Détection",
+            "Implacable",
+            "Réduit la vitesse",
+        }
+    },
 }
 -- }}}
 
