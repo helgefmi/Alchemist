@@ -12,8 +12,8 @@ lib/Unicorn/Unicorn/List.lua
 Alchemist.lua
 Alchemist/Batteries.lua
 Alchemist/Multilingual.lua
-Alchemist/translations.lua
 Alchemist/Reagent.lua
 Alchemist/Algorithm.lua
 Alchemist/Inventory.lua
+translations.lua
 Alchemist.xml

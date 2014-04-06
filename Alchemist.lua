@@ -1,6 +1,13 @@
 Alchemist = {
-    version = 0.02,
+    version = 0.03,
     listview = nil,
+
+    texts = {
+        NO_DISCOVERIES_AVAILABLE = "No discoveries available.",
+        COMBINATIONS_AVAILABLE = " combinations available!",
+        COMBINE_THE_FOLLOWING = "Combine the following:",
+        TO_GET_THE_FOLLOWING_DISCOVERIES = ".. to get the following discoveries:",
+    }
 }
 
 function Alchemist.initialize()
@@ -46,19 +53,19 @@ function Alchemist.print_combinations()
     local gettext = Alchemist.Multilingual.translate_text
 
     if #combinations == 0 then
-        mw:add_message(gettext("Alchemist: No discoveries available."))
+        mw:add_message("Alchemist: " .. gettext(Alchemist.texts.NO_DISCOVERIES_AVAILABLE))
     else
-        mw:add_message(#combinations .. gettext(" combinations available!"))
+        mw:add_message(#combinations .. gettext(Alchemist.texts.COMBINATIONS_AVAILABLE))
         mw:add_message("")
         for _, combination in pairs(combinations) do
-            mw:add_message(gettext("Combine the following:"))
+            mw:add_message(gettext(Alchemist.texts.COMBINE_THE_FOLLOWING))
             
             table.sort(combination.reagents, function(a, b) return a.name < b.name end)
             for _, reagent in pairs(combination.reagents) do
                 mw:add_message("- |c00ff00" .. reagent.name)
             end
             
-            mw:add_message(gettext(".. to get the following discoveries:"))
+            mw:add_message(gettext(Alchemist.texts.TO_GET_THE_FOLLOWING_DISCOVERIES))
             
             table.sort(combination.discoveries, function(a, b) return a.reagent.name < b.reagent.name end)
             for _, discovery in pairs(combination.discoveries) do

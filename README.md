@@ -20,6 +20,10 @@ The addon will activate as soon as you interact (click on) an Alchemy Station. W
 Changelog
 ---------
 
+### 0.03
+
+- Added support for french language.
+
 ### 0.02
 
 - Added support for german language.
