@@ -43,22 +43,22 @@ function Alchemist.print_combinations()
     mw:clear()
     mw.control:SetHidden(false)
 
-    local _ = Alchemist.Multilingual.translate_text
+    local gettext = Alchemist.Multilingual.translate_text
 
     if #combinations == 0 then
-        mw:add_message(_("Alchemist: No discoveries available."))
+        mw:add_message(gettext("Alchemist: No discoveries available."))
     else
-        mw:add_message(#combinations .. _(" combinations available!"))
+        mw:add_message(#combinations .. gettext(" combinations available!"))
         mw:add_message("")
         for _, combination in pairs(combinations) do
-            mw:add_message(_("Combine the following:"))
+            mw:add_message(gettext("Combine the following:"))
             
             table.sort(combination.reagents, function(a, b) return a.name < b.name end)
             for _, reagent in pairs(combination.reagents) do
                 mw:add_message("- |c00ff00" .. reagent.name)
             end
             
-            mw:add_message(_(".. to get the following discoveries:"))
+            mw:add_message(gettext(".. to get the following discoveries:"))
             
             table.sort(combination.discoveries, function(a, b) return a.reagent.name < b.reagent.name end)
             for _, discovery in pairs(combination.discoveries) do

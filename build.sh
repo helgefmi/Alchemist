@@ -10,7 +10,8 @@ pwd
 rm -rf build/
 mkdir build/Alchemist/Alchemist -p
 
-cp -ar $(egrep '^Alchemist' Alchemist.txt.release) build/Alchemist/
+cp -ar *.lua *.xml build/Alchemist/
+cp -ar Alchemist/*.lua build/Alchemist/Alchemist/
 cp -ar Alchemist.txt.release build/Alchemist/Alchemist.txt
 cp -ar *.md MIT-LICENSE build/Alchemist/
 
