@@ -5,8 +5,8 @@
 ## DependsOn: Unicorn
 
 Alchemist.lua
-lib/Batteries.lua
-lib/Reagent.lua
-lib/Algorithm.lua
-lib/Inventory.lua
+Alchemist/Batteries.lua
+Alchemist/Reagent.lua
+Alchemist/Algorithm.lua
+Alchemist/Inventory.lua
 Alchemist.xml
