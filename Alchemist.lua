@@ -14,6 +14,7 @@ function Alchemist.initialize()
     local supported_languages = {
         english = true,
         german = true,
+        french = true,
     }
 
     local current_language = Alchemist.Multilingual.get_current_language()
