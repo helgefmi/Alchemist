@@ -17,6 +17,14 @@ The addon will activate as soon as you interact (click on) an Alchemy Station. W
 
 <img src="http://i.imgur.com/ue3qn6F.png" width="700px" alt="Screenshot" />
 
+Changelog
+---------
+
+### 0.02
+
+- Added support for german language.
+
+
 TODO / ideas
 ------------
 

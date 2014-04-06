@@ -1,112 +1,224 @@
 -- all reagents {{{
 local all_reagents = {
-    ["Blessed Thistle"] = {
-        "Restore Stamina",
-        "Increase Weapon Power",
-        "Speed",
-        "Ravage Health"
+    english = {
+        ["Blessed Thistle"] = {
+            "Restore Stamina",
+            "Increase Weapon Power",
+            "Speed",
+            "Ravage Health"
+        },
+        ["Blue Entoloma"] = {
+            "Restore Health",
+            "Invisible",
+            "Lower Spell Power",
+            "Ravage Magicka"
+        },
+        ["Bugloss"] = {
+            "Increase Spell Resist",
+            "Restore Health",
+            "Restore Magicka",
+            "Lower Spell Power"
+        },
+        ["Columbine"] = {
+            "Restore Health",
+            "Restore Stamina",
+            "Restore Magicka",
+            "Unstoppable"
+        },
+        ["Corn Flower"] = {
+            "Restore Magicka",
+            "Increase Spell Power",
+            "Detection",
+            "Ravage Health"
+        },
+        ["Dragonthorn"] = {
+            "Increase Weapon Power",
+            "Restore Stamina",
+            "Weapon Crit",
+            "Lower Armor"
+        },
+        ["Emetic Russula"] = {
+            "Ravage Health",
+            "Ravage Stamina",
+            "Ravage Magicka",
+            "Stun"
+        },
+        ["Imp Stool"] = {
+            "Increase Armor",
+            "Lower Weapon Power",
+            "Ravage Stamina",
+            "Lower Weapon Crit"
+        },
+        ["Lady's Smock"] = {
+            "Increase Spell Power",
+            "Restore Magicka",
+            "Spell Crit",
+            "Lower Spell Resist"
+        },
+        ["Luminous Russula"] = {
+            "Restore Health",
+            "Ravage Stamina",
+            "Lower Weapon Power",
+            "Reduce Speed"
+        },
+        ["Mountain Flower"] = {
+            "Increase Armor",
+            "Restore Health",
+            "Restore Stamina",
+            "Lower Weapon Power"
+        },
+        ["Namira's Rot"] = {
+            "Spell Crit",
+            "Invisible",
+            "Speed",
+            "Unstoppable"
+        },
+        ["Nirnroot"] = {
+            "Invisible",
+            "Ravage Health",
+            "Lower Weapon Crit",
+            "Lower Spell Crit"
+        },
+        ["Stinkhorn"] = {
+            "Increase Weapon Power",
+            "Lower Armor",
+            "Ravage Health",
+            "Ravage Stamina"
+        },
+        ["Violet Coprinus"] = {
+            "Increase Spell Power",
+            "Lower Spell Resist",
+            "Ravage Health",
+            "Ravage Magicka"
+        },
+        ["Water Hyacinth"] = {
+            "Restore Health",
+            "Weapon Crit",
+            "Spell Crit",
+            "Stun"
+        },
+        ["White Cap"] = {
+            "Increase Spell Resist",
+            "Lower Spell Power",
+            "Ravage Magicka",
+            "Lower Spell Crit"
+        },
+        ["Wormwood"] = {
+            "Weapon Crit",
+            "Detection",
+            "Unstoppable",
+            "Reduce Speed"
+        }
     },
-    ["Blue Entoloma"] = {
-        "Restore Health",
-        "Invisible",
-        "Lower Spell Power",
-        "Ravage Magicka"
-    },
-    ["Bugloss"] = {
-        "Increase Spell Resist",
-        "Restore Health",
-        "Restore Magicka",
-        "Lower Spell Power"
-    },
-    ["Columbine"] = {
-        "Restore Health",
-        "Restore Stamina",
-        "Restore Magicka",
-        "Unstoppable"
-    },
-    ["Corn Flower"] = {
-        "Restore Magicka",
-        "Increase Spell Power",
-        "Detection",
-        "Ravage Health"
-    },
-    ["Dragonthorn"] = {
-        "Increase Weapon Power",
-        "Restore Stamina",
-        "Weapon Crit",
-        "Lower Armor"
-    },
-    ["Emetic Russula"] = {
-        "Ravage Health",
-        "Ravage Stamina",
-        "Ravage Magicka",
-        "Stun"
-    },
-    ["Imp Stool"] = {
-        "Increase Armor",
-        "Lower Weapon Power",
-        "Ravage Stamina",
-        "Lower Weapon Crit"
-    },
-    ["Lady's Smock"] = {
-        "Increase Spell Power",
-        "Restore Magicka",
-        "Spell Crit",
-        "Lower Spell Resist"
-    },
-    ["Luminous Russula"] = {
-        "Restore Health",
-        "Ravage Stamina",
-        "Lower Weapon Power",
-        "Reduce Speed"
-    },
-    ["Mountain Flower"] = {
-        "Increase Armor",
-        "Restore Health",
-        "Restore Stamina",
-        "Lower Weapon Power"
-    },
-    ["Namira's Rot"] = {
-        "Spell Crit",
-        "Invisible",
-        "Speed",
-        "Unstoppable"
-    },
-    ["Nirnroot"] = {
-        "Invisible",
-        "Ravage Health",
-        "Lower Weapon Crit",
-        "Lower Spell Crit"
-    },
-    ["Stinkhorn"] = {
-        "Increase Weapon Power",
-        "Lower Armor",
-        "Ravage Health",
-        "Ravage Stamina"
-    },
-    ["Violet Coprinus"] = {
-        "Increase Spell Power",
-        "Lower Spell Resist",
-        "Ravage Health",
-        "Ravage Magicka"
-    },
-    ["Water Hyacinth"] = {
-        "Restore Health",
-        "Weapon Crit",
-        "Spell Crit",
-        "Stun"
-    },
-    ["White Cap"] = {
-        "Increase Spell Resist",
-        "Lower Spell Power",
-        "Ravage Magicka",
-        "Lower Spell Crit"
-    },
-    ["Wormwood"] = {
-        "Weapon Crit",
-        "Detection",
-        "Unstoppable",
-        "Reduce Speed"
+    german = {
+        ["Benediktenkraut"] = {
+            "Ausdauer wiederherstellen",
+            "Erhöht Waffenkraft",
+            "Lebensverwüstung",
+            "Tempo"
+        },
+        ["Blauer Glöckling"] = {
+            "Magickaverwüstung",
+            "Veringert Magiekraft",
+            "Leben wiederherstellen",
+            "Unsichtbarkeit"
+        },
+        ["Wolfsauge"] = {
+            "Erhöht Magieresistenz",
+            "Leben wiederherstellen",
+            "Verringert Magiekraft",
+            "Magicka wiederherstellen"
+        },
+        ["Akelei"] = {
+            "Leben wiederherstellen",
+            "Magicka wiederherstellen",
+            "Ausdauer wiederherstellen",
+            "Sicherer Stand"
+        },
+        ["Kornblume"] = {
+            "Magicka wiederherstellen",
+            "Erhöht Magiekraft",
+            "Lebensverwüstung",
+            "Detektion"
+        },
+        ["Drachendorn"] = {
+            "Erhöht Waffenkraft",
+            "Ausdauer wiederherstellen",
+            "Verringert Rüstung",
+            "Kritische Waffentreffer"
+        },
+        ["Brechtäubling"] = {
+            "Lebensverwüstung",
+            "Magickaverwüstung",
+            "Ausdauerverwüstung",
+            "Betäubung"
+        },
+        ["Koboldschemel"] = {
+            "Verringert Waffenkraft",
+            "Ausdauerverwüstung",
+            "Erhöht Rüstung",
+            "Verringert kritische Waffentreffer"
+        },
+        ["Wiesenschaumkraut"] = {
+            "Erhöht Magiekraft",
+            "Magicka wiederherstellen",
+            "Verringert Magieresistenz",
+            "Kritische Zaubertreffer"
+        },
+        ["Leuchttäubling"] = {
+            "Ausdauerverwüstung",
+            "Verringert Waffenkraft",
+            "Leben wiederherstellen",
+            "Reduziert Tempo"        
+        },
+        ["Bergblume"] = {
+            "Erhöht Rüstung",
+            "Leben wiederherstellen",
+            "Verringert Magiekraft",
+            "Ausdauer wiederherstellen"
+        },
+        ["Namiras Fäulnis"] = {
+            "Kritische Waffentreffer",
+            "Tempo",
+            "Unsichtbarkeit",
+            "Sicherer Stand"        
+        },
+        ["Nirnwurz"] = {
+            "Lebensverwüstung",
+            "Verringert kritische Zaubertreffer",
+            "Verringert kritische Waffentreffer",
+            "Unsichtbarkeit"
+        },
+        ["Stinkmorchel"] = {
+            "Verringert Rüstung",
+            "Lebensverwüstung",
+            "Erhöht Waffenkraft",
+            "Ausdauerverwüstung"
+        },
+        ["Violetter Tintling"] = {
+            "Verringert Magieresistenz",
+            "Lebensverwüstung",
+            "Erhöht Magiekraft",
+            "Magickaverwüstung"
+        },
+        ["Wasserhyazinthe"] = {
+            "Leben wiederherstellen",
+            "Kritische Zaubertreffer",
+            "Kritische Waffentreffer",
+            "Betäubung"
+        },
+        ["Weiße Kappe"] = {
+            "Verringert Magiekraft",
+            "Magickaverwüstung",
+            "Erhöht Magieresistenz",
+            "Verringert kritische Zaubertreffer"
+        },
+        ["Wermut"] = {
+            "Kritische Waffentreffer",
+            "Reduziert Tempo",
+            "Detektion",
+            "Sicherer Stand"
+        }
     }
 }
 -- }}}
@@ -128,8 +240,11 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
     -- Adds a reagent to the current inventory. It will also add traits that we don't know about yet,
     -- and set them to "not discovered". This is indicated by the *value* in the `traits` table.
     local traits = {}
-    local all_traits = all_reagents[name]
-    assert(#all_traits == 4)
+    local lang = Alchemist.Multilingual.get_current_language()
+    assert(all_reagents[lang] ~= nil)
+
+    local all_traits = all_reagents[lang][name]
+    assert(all_traits ~= nil and #all_traits == 4)
     for _, trait in pairs(all_traits) do
         -- key = trait name
         -- value = is discovered
