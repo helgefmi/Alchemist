@@ -111,35 +111,29 @@ local all_reagents = {
         }
     },
     german = {
-        ["Benediktenkraut"] = {
-            "Ausdauer wiederherstellen",
-            "Erhöht Waffenkraft",
-            "Lebensverwüstung",
-            "Tempo"
-        },
-        ["Blauer Glöckling"] = {
-            "Magickaverwüstung",
-            "Veringert Magiekraft",
-            "Leben wiederherstellen",
-            "Unsichtbarkeit"
-        },
-        ["Wolfsauge"] = {
-            "Erhöht Magieresistenz",
-            "Leben wiederherstellen",
-            "Verringert Magiekraft",
-            "Magicka wiederherstellen"
-        },
         ["Akelei"] = {
             "Leben wiederherstellen",
             "Magicka wiederherstellen",
             "Ausdauer wiederherstellen",
             "Sicherer Stand"
         },
-        ["Kornblume"] = {
-            "Magicka wiederherstellen",
-            "Erhöht Magiekraft",
+        ["Benediktenkraut"] = {
+            "Ausdauer wiederherstellen",
+            "Erhöht Waffenkraft",
             "Lebensverwüstung",
-            "Detektion"
+            "Erhöht Geschwindigkeit"
+        },
+        ["Bergblume"] = {
+            "Erhöht Rüstung",
+            "Leben wiederherstellen",
+            "Verringert Waffenkraft",
+            "Ausdauer wiederherstellen"
+        },
+        ["Blauer Glöckling"] = {
+            "Magickaverwüstung",
+            "Verringert Magiekraft",
+            "Leben wiederherstellen",
+            "Unsichtbarkeit"
         },
         ["Drachendorn"] = {
             "Erhöht Waffenkraft",
@@ -147,77 +141,83 @@ local all_reagents = {
             "Verringert Rüstung",
             "Kritische Waffentreffer"
         },
-        ["Brechtäubling"] = {
-            "Lebensverwüstung",
-            "Magickaverwüstung",
+        ["Koboldschemel"] = {
+            "Reduziert Waffenkraft",
+            "Erhöht Rüstung",
             "Ausdauerverwüstung",
+            "Reduziert Kritische Waffentreffer"
+        },
+        ["Kornblume"] = {
+            "Magicka wiederherstellen",
+            "Erhöht Magiekraft",
+            "Lebensverwüstung",
+            "Detektion"
+        },
+        ["Leuchttäubling"] = {
+            "Ausdauerverwüstung",
+            "Leben wiederherstellen",
+            "Reduziert Waffenkraft",
+            "Reduziert Geschwindigkeit"
+        },
+        ["Namiras Fäulnis"] = {
+            "Kritische Magietreffer",
+            "Unsichtbarkeit",
+            "Erhöht Geschwindigkeit",
+            "Sicherer Stand"
+        },
+        ["Nirnwurz"] = {
+            "Lebensverwüstung",
+            "Verringert Kritische Magietreffer",
+            "Verringert Kritische Waffentreffer",
+            "Unsichtbarkeit"
+        },
+        ["Speitäubling"] = {
+            "Lebensverwüstung",
+            "Ausdauerverwüstung",
+            "Magickaverwüstung",
             "Betäubung"
         },
-        ["Koboldschemel"] = {
-            "Verringert Waffenkraft",
-            "Ausdauerverwüstung",
-            "Erhöht Rüstung",
-            "Verringert kritische Waffentreffer"
+        ["Stinkmorchel"] = {
+            "Verringert Rüstung",
+            "Erhöht Waffenkraft",
+            "Lebensverwüstung",
+            "Ausdauerverwüstung"
+        },
+        ["Violetter Tintling"] = {
+            "Verringert Magieresistenz",
+            "Erhöht Magiekraft",
+            "Lebensverwüstung",
+            "Magickaverwüstung"
+        },
+        ["Wasserhyazinthe"] = {
+            "Leben wiederherstellen",
+            "Kritische Magietreffer",
+            "Kritische Waffentreffer",
+            "Betäubung"
+        },
+        ["Weißkappe"] = {
+            "Reduziert Magiekraft",
+            "Magickaverwüstung",
+            "Erhöht Magieresistenz",
+            "Reduziert Kritische Magietreffer"
+        },
+        ["Wermut"] = {
+            "Kritische Waffentreffer",
+            "Reduziert Geschwindigkeit",
+            "Detektion",
+            "Sicherer Stand"
         },
         ["Wiesenschaumkraut"] = {
             "Erhöht Magiekraft",
             "Magicka wiederherstellen",
             "Verringert Magieresistenz",
-            "Kritische Zaubertreffer"
+            "Kritische Magietreffer"
         },
-        ["Leuchttäubling"] = {
-            "Ausdauerverwüstung",
-            "Verringert Waffenkraft",
-            "Leben wiederherstellen",
-            "Reduziert Tempo"        
-        },
-        ["Bergblume"] = {
-            "Erhöht Rüstung",
-            "Leben wiederherstellen",
-            "Verringert Magiekraft",
-            "Ausdauer wiederherstellen"
-        },
-        ["Namiras Fäulnis"] = {
-            "Kritische Waffentreffer",
-            "Tempo",
-            "Unsichtbarkeit",
-            "Sicherer Stand"        
-        },
-        ["Nirnwurz"] = {
-            "Lebensverwüstung",
-            "Verringert kritische Zaubertreffer",
-            "Verringert kritische Waffentreffer",
-            "Unsichtbarkeit"
-        },
-        ["Stinkmorchel"] = {
-            "Verringert Rüstung",
-            "Lebensverwüstung",
-            "Erhöht Waffenkraft",
-            "Ausdauerverwüstung"
-        },
-        ["Violetter Tintling"] = {
-            "Verringert Magieresistenz",
-            "Lebensverwüstung",
-            "Erhöht Magiekraft",
-            "Magickaverwüstung"
-        },
-        ["Wasserhyazinthe"] = {
-            "Leben wiederherstellen",
-            "Kritische Zaubertreffer",
-            "Kritische Waffentreffer",
-            "Betäubung"
-        },
-        ["Weiße Kappe"] = {
-            "Verringert Magiekraft",
-            "Magickaverwüstung",
+        ["Wolfsauge"] = {
             "Erhöht Magieresistenz",
-            "Verringert kritische Zaubertreffer"
-        },
-        ["Wermut"] = {
-            "Kritische Waffentreffer",
-            "Reduziert Tempo",
-            "Detektion",
-            "Sicherer Stand"
+            "Leben wiederherstellen",
+            "Verringert Magiekraft",
+            "Magicka wiederherstellen"
         }
     }
 }
