@@ -1,0 +1,19 @@
+## Title: Alchemist
+
+## Author: Helge Milde
+## APIVersion: 100003
+## OptionalDependsOn: Unicorn
+
+## Unicorn dependency
+lib/Unicorn/Unicorn.lua
+lib/Unicorn/Unicorn/List.lua
+
+## Alchemist
+Alchemist.lua
+Alchemist/Batteries.lua
+Alchemist/Multilingual.lua
+Alchemist/translations.lua
+Alchemist/Reagent.lua
+Alchemist/Algorithm.lua
+Alchemist/Inventory.lua
+Alchemist.xml
