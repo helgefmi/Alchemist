@@ -42,9 +42,14 @@ local function translate_text(text)
     return translations[language][text] or text
 end
 
+local function set_current_language(language)
+    current_language_cached = language
+end
+
 Alchemist.Multilingual = {
     translate_text = translate_text,
     register_translation = register_translation,
     register_translations = register_translations,
     get_current_language = get_current_language,
+    set_current_language = set_current_language,
 }

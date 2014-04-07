@@ -11,19 +11,6 @@ Alchemist = {
 }
 
 function Alchemist.initialize()
-    local supported_languages = {
-        english = true,
-        german = true,
-        french = true,
-    }
-
-    local current_language = Alchemist.Multilingual.get_current_language()
-    if not supported_languages[current_language] then
-        d("Alchemist is sorry, but your language is not supported as of yet.")
-        d("If you want this to be fixed, you could leave a message on http://www.esoui.com/downloads/info120-Alchemist.html")
-        return
-    end
-
     Alchemist.listview = Unicorn.ListView.new(AlchemistControl, {
         title = "Alchemist",
         width = 350,
@@ -79,7 +66,19 @@ end
 
 function Alchemist.on_start_crafting(event_type, crafting_type)
     if crafting_type == CRAFTING_TYPE_ALCHEMY then
-        Alchemist.print_combinations()
+        local supported_languages = {
+            english = true,
+            german = true,
+            french = true,
+        }
+
+        local current_language = Alchemist.Multilingual.get_current_language()
+        if not supported_languages[current_language] then
+            d("Alchemist is sorry, but your language is not supported as of yet.")
+            d("If you want this to be fixed, you could leave a message on http://www.esoui.com/downloads/info120-Alchemist.html")
+        else
+            Alchemist.print_combinations()
+        end
     end
 end
 
