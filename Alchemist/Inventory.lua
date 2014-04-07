@@ -177,12 +177,6 @@ local all_reagents = {
             "Verringert Kritische Waffentreffer",
             "Unsichtbarkeit",
         },
-        ["Speitäubling"] = {
-            "Lebensverwüstung",
-            "Ausdauerverwüstung",
-            "Magickaverwüstung",
-            "Betäubung",
-        },
         ["Stinkmorchel"] = {
             "Verringert Rüstung",
             "Erhöht Waffenkraft",
