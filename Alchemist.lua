@@ -4,9 +4,9 @@ Alchemist = {
 
     texts = {
         NO_DISCOVERIES_AVAILABLE = "No discoveries available.",
-        COMBINATIONS_AVAILABLE = " combinations available!",
+        COMBINATIONS_AVAILABLE = "%d combination(s) available!",
         COMBINE_THE_FOLLOWING = "Combine the following:",
-        TO_GET_THE_FOLLOWING_DISCOVERIES = ".. to get the following discoveries:",
+        TO_GET_THE_FOLLOWING_DISCOVERIES = ".. to discover the following:",
     }
 }
 
@@ -56,7 +56,7 @@ function Alchemist.print_combinations()
     if #combinations == 0 then
         mw:add_message("Alchemist: " .. gettext(Alchemist.texts.NO_DISCOVERIES_AVAILABLE))
     else
-        mw:add_message(#combinations .. gettext(Alchemist.texts.COMBINATIONS_AVAILABLE))
+        mw:add_message(string.format(gettext(Alchemist.texts.COMBINATIONS_AVAILABLE), #combinations))
         mw:add_message("")
         for _, combination in pairs(combinations) do
             mw:add_message(gettext(Alchemist.texts.COMBINE_THE_FOLLOWING))
