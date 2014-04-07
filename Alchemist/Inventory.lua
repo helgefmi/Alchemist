@@ -358,21 +358,23 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
     local traits = {}
     local lang = Alchemist.Multilingual.get_current_language()
 
-    assert(all_reagents[lang] ~= nil)
+    assert(all_reagents[lang] ~= nil, string.format("'%s' is not a supported language.", lang))
 
     local all_traits = all_reagents[lang][name]
-    assert(all_traits ~= nil and #all_traits == 4)
+    assert(all_traits ~= nil and #all_traits == 4, string.format("'%s' is not a valid reagent.", name))
 
     for _, trait in pairs(all_traits) do
-        assert(traits[trait] == nil)
+        assert(traits[trait] == nil, string.format("Could not find trait '%s' in reagent '%s'", trait, name))
 
         -- key = trait name
         -- value = is discovered
         traits[trait] = Alchemist.Batteries.element_is_in_table(trait, known_traits)
     end
     
-    assert(self.reagents[name] == nil)
-    assert(Alchemist.Batteries.num_items_in_table(traits) == 4)
+    assert(self.reagents[name] == nil, string.format("Tried to add '%s', but it's already added.", name))
+
+    local num_traits = Alchemist.Batteries.num_items_in_table(traits)
+    assert(num_traits == 4, string.format("Found %d traits; something is wrong with the reagent '%s'.", num_traits, name))
 
     self.reagents[name] = Alchemist.Reagent:new(name, qty, traits, bag_id, slot_index)
     
