@@ -62,7 +62,7 @@ local function get_optimal_combinations(inventory, max_reagents)
             table.insert(ret, combination)
 
             for _, reagent in pairs(combination.reagents) do
-                inventory:remove_reagent(reagent)
+                inventory:decrement_reagent_qty(reagent)
             end
 
             for _, discovery in pairs(combination.discoveries) do

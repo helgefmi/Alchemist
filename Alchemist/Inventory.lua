@@ -364,9 +364,10 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
     assert(all_traits ~= nil and #all_traits == 4)
 
     for _, trait in pairs(all_traits) do
+        assert(traits[trait] == nil)
+
         -- key = trait name
         -- value = is discovered
-        assert(traits[trait] == nil)
         traits[trait] = Alchemist.Batteries.element_is_in_table(trait, known_traits)
     end
     
@@ -378,8 +379,8 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
     return self.reagents[name]
 end
 
- function Inventory:remove_reagent(reagent)
-    -- will weight decrement qty or remove the reagent all together.
+ function Inventory:decrement_reagent_qty(reagent)
+    -- will either decrement qty or remove the reagent all together.
     if reagent.qty == 1 then
         self.reagents[reagent.name] = nil
     else
