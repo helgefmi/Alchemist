@@ -20,6 +20,11 @@ The addon will activate as soon as you interact (click on) an Alchemy Station. W
 Changelog
 ---------
 
+### 0.04
+
+- Fixed issues with both german and french translations of reagents and traits.
+- Added better error messages for when Alchemist finds reagents or traits that are spelled differently.
+
 ### 0.03
 
 - Added support for french language.
