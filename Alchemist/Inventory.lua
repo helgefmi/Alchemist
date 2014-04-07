@@ -121,7 +121,7 @@ local all_reagents = {
             "Ausdauer wiederherstellen",
             "Erhöht Waffenkraft",
             "Lebensverwüstung",
-            "Erhöht Geschwindigkeit",
+            "Tempo",
         },
         ["Bergblume"] = {
             "Erhöht Rüstung",
@@ -134,6 +134,12 @@ local all_reagents = {
             "Verringert Magiekraft",
             "Leben wiederherstellen",
             "Unsichtbarkeit",
+        },
+        ["Brechtäubling"] = {
+            "Lebensverwüstung",
+            "Magickaverwüstung",
+            "Ausdauerverwüstung",
+            "Betäubung",
         },
         ["Drachendorn"] = {
             "Erhöht Waffenkraft",
@@ -157,12 +163,12 @@ local all_reagents = {
             "Ausdauerverwüstung",
             "Leben wiederherstellen",
             "Reduziert Waffenkraft",
-            "Reduziert Geschwindigkeit",
+            "Reduziert Tempo",
         },
         ["Namiras Fäulnis"] = {
-            "Kritische Magietreffer",
+            "Kritische Zaubertreffer",
             "Unsichtbarkeit",
-            "Erhöht Geschwindigkeit",
+            "Tempo",
             "Sicherer Stand",
         },
         ["Nirnwurz"] = {
@@ -191,7 +197,7 @@ local all_reagents = {
         },
         ["Wasserhyazinthe"] = {
             "Leben wiederherstellen",
-            "Kritische Magietreffer",
+            "Kritische Zaubertreffer",
             "Kritische Waffentreffer",
             "Betäubung",
         },
@@ -203,7 +209,7 @@ local all_reagents = {
         },
         ["Wermut"] = {
             "Kritische Waffentreffer",
-            "Reduziert Geschwindigkeit",
+            "Reduziert Tempo",
             "Detektion",
             "Sicherer Stand",
         },
@@ -211,7 +217,7 @@ local all_reagents = {
             "Erhöht Magiekraft",
             "Magicka wiederherstellen",
             "Verringert Magieresistenz",
-            "Kritische Magietreffer",
+            "Kritische Zaubertreffer",
         },
         ["Wolfsauge"] = {
             "Erhöht Magieresistenz",
@@ -351,10 +357,12 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
     -- and set them to "not discovered". This is indicated by the *value* in the `traits` table.
     local traits = {}
     local lang = Alchemist.Multilingual.get_current_language()
+
     assert(all_reagents[lang] ~= nil)
 
     local all_traits = all_reagents[lang][name]
     assert(all_traits ~= nil and #all_traits == 4)
+
     for _, trait in pairs(all_traits) do
         -- key = trait name
         -- value = is discovered
@@ -363,6 +371,8 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
     end
     
     assert(self.reagents[name] == nil)
+    assert(Alchemist.Batteries.num_items_in_table(traits) == 4)
+
     self.reagents[name] = Alchemist.Reagent:new(name, qty, traits, bag_id, slot_index)
     
     return self.reagents[name]
@@ -403,9 +413,9 @@ function Inventory:populate_from_control(control)
             local qty = reagent_data.stackCount
       
             local t1, _, _, t2, _, _, t3, _, _, t4, _, _ = GetAlchemyItemTraits(bag_id, slot_index)
-            local traits = {t1, t2, t3, t4}
+            local known_traits = {t1, t2, t3, t4}
             
-            local reagent = self:add_reagent(name, qty, traits, bag_id, slot_index)
+            local reagent = self:add_reagent(name, qty, known_traits, bag_id, slot_index)
         end
     end
 end
