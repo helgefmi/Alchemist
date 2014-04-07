@@ -221,7 +221,7 @@ local all_reagents = {
         }
     },
     french = {
-        ["Chardon béni"] = {
+        ["Chardon Béni"] = {
             "Rend de la vigueur",
             "Augmente la puissance de l'arme",
             "Vitesse",
@@ -251,19 +251,19 @@ local all_reagents = {
             "Détection",
             "Réduit la santé",
         },
-        ["Epine-de-Dragon"] = {
+        ["Épine-de-Dragon"] = {
             "Augmente la puissance de l'arme",
             "Rend de la vigueur",
             "Arme critique",
             "Diminue l'armure",
         },
-        ["Russule émétique"] = {
+        ["Russule Émétique"] = {
             "Réduit la santé",
             "Réduit la vigueur",
             "Réduit la magie",
             "Assomer",
         },
-        ["Pied de lutin"] = {
+        ["Pied-de-Lutin"] = {
             "Augmente l'armure",
             "Diminue la puissance de l'arme",
             "Réduit la vigueur",
@@ -275,7 +275,7 @@ local all_reagents = {
             "Sort critique",
             "Diminue la résistance aux sorts",
         },
-        ["Russule phosphorescente"] = {
+        ["Russule Phosphorescente"] = {
             "Rend de la santé",
             "Réduit la vigueur",
             "Diminue la puissance de l'arme",
@@ -305,19 +305,19 @@ local all_reagents = {
             "Réduit la santé",
             "Réduit la vigueur",
         },
-        ["Coprin violet"] = {
+        ["Coprin Violet"] = {
             "Augmente la puissance des sorts",
             "Diminue la résistance aux sorts",
             "Réduit la santé",
             "Réduit la magie",
         },
-        ["Jacinthe d'eau"] = {
+        ["Jacinthe D'eau"] = {
             "Rend de la santé",
             "Arme critique",
             "Sort critique",
             "Assomer",
         },
-        ["Chapeau blanc"] = {
+        ["Chapeau Blanc"] = {
             "Augmente la résistance aux sorts",
             "Diminue la puissance des sorts",
             "Réduit la magie",
