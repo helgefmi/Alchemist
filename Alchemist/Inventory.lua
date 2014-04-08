@@ -196,7 +196,7 @@ local all_reagents = {
             "Betäubung",
         },
         ["Weißkappe"] = {
-            "Reduziert Magiekraft",
+            "Verringert Magiekraft",
             "Magickaverwüstung",
             "Erhöht Magieresistenz",
             "Reduziert Kritische Magietreffer",
