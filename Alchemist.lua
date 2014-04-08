@@ -12,7 +12,7 @@ Alchemist = {
 
 function Alchemist.initialize()
     Alchemist.listview = Unicorn.ListView.new(AlchemistControl, {
-        title = "Alchemist " .. Alchemist.version,
+        title = "|cccccccAlchemist |cffff99" .. Alchemist.version,
         width = 350,
         left = 970,
         top = 60,
@@ -42,7 +42,7 @@ function Alchemist.print_combinations()
     local gettext = Alchemist.Multilingual.translate_text
 
     if #combinations == 0 then
-        mw:add_message("Alchemist: " .. gettext(Alchemist.texts.NO_DISCOVERIES_AVAILABLE))
+        mw:add_message(gettext(Alchemist.texts.NO_DISCOVERIES_AVAILABLE))
     else
         mw:add_message(string.format(gettext(Alchemist.texts.COMBINATIONS_AVAILABLE), #combinations))
         mw:add_message("")
