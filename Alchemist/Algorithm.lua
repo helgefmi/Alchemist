@@ -1,7 +1,11 @@
 local function get_discovered_traits(reagents)
     -- compare reagents and find traits that would be discovered if these reagents was combined.
+    --
+    -- this is done by going through each non-discovered trait of each reagent, and see if other
+    -- reagents have the same trait (discovered or not.)
     local discoveries = {}
 
+    -- seriously lua. get `continue`.
     for _, r1 in pairs(reagents) do
         for trait, discovered in pairs(r1.traits) do
             if not discovered then
@@ -26,14 +30,22 @@ end
 local function get_best_combination(inventory, max_reagents)
     -- given a set of reagents (inventory), return the best possible combination, maximizing on
     -- number of new discoveries.
+    --
+    -- "best possible" is not theoretically optimal, but it's good enough. A better way to do this
+    -- would be to implement a depth first search, that finds which combination of combinations yields
+    -- the most discoveries per reagent used, overall. But I'm not planning on implementing that;
+    -- the current algorithm is good enough.
     if inventory:num_reagents() < 2 then
         return
     end
 
+    -- we score each combination to decide the best one. this scoring is done such that if we have
+    -- two combinations that gets 4 discoveries, we take the one that uses the least reagents.
+    -- that's about it.
     local best_score = 0
     local best_combination
 
-    reagent_names = inventory:get_reagent_names()
+    local reagent_names = inventory:get_reagent_names()
     local all_combinations = {}
 
     for num_reagents = 2, max_reagents do
@@ -50,6 +62,9 @@ local function get_best_combination(inventory, max_reagents)
         end
 
         local discoveries = get_discovered_traits(reagents_combination)
+
+        -- we subtract #reagent_names (number of reagents used) so we use the least amount of
+        -- reagents if different combinations yields the same number of discoveries.
         local score = (#discoveries * 10) - #reagent_names
         if score > best_score then
             best_score = score
