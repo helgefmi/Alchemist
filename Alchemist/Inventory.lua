@@ -346,7 +346,7 @@ function Inventory:new(control)
     return self
 end
 
-function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
+function Inventory:add_reagent(reagent_name, qty, known_traits, bag_id, slot_index)
     -- Adds a reagent to the current inventory. It will also add traits that we don't know about yet,
     -- and set them to "not discovered". This is indicated by the *value* in the `traits` table.
     local traits = {}
@@ -354,25 +354,31 @@ function Inventory:add_reagent(name, qty, known_traits, bag_id, slot_index)
 
     assert(all_reagents[lang] ~= nil, string.format("'%s' is not a supported language.", lang))
 
-    local all_traits = all_reagents[lang][name]
-    assert(all_traits ~= nil and #all_traits == 4, string.format("'%s' is not a valid reagent.", name))
+    local all_traits = all_reagents[lang][reagent_name]
+    assert(all_traits ~= nil and #all_traits == 4, string.format("'%s' is not a valid reagent.", reagent_name))
 
     for _, trait in pairs(all_traits) do
-        assert(traits[trait] == nil, string.format("Could not find trait '%s' in reagent '%s'", trait, name))
+        assert(traits[trait] == nil, string.format("Could not find trait '%s' in reagent '%s'", trait, reagent_name))
 
         -- key = trait name
         -- value = is discovered
         traits[trait] = Alchemist.Batteries.element_is_in_table(trait, known_traits)
     end
+
+    -- This check makes sure that the player didn't have some trait in his inventory that ISN'T in all_reagents.
+    for _, trait in pairs(known_traits) do
+        assert(traits[trait], string.format("Trait '%s' is NOT in our list of traits for reagent '%s'. " ..
+                                            "Please leaeve a comment on esoui.com with this error.", trait, reagent_name))
+    end
     
-    assert(self.reagents[name] == nil, string.format("Tried to add '%s', but it's already added.", name))
+    assert(self.reagents[reagent_name] == nil, string.format("Tried to add '%s', but it's already added.", reagent_name))
 
     local num_traits = Alchemist.Batteries.num_items_in_table(traits)
-    assert(num_traits == 4, string.format("Found %d traits; something is wrong with the reagent '%s'.", num_traits, name))
+    assert(num_traits == 4, string.format("Found %d traits; something is wrong with the reagent '%s'.", num_traits, reagent_name))
 
-    self.reagents[name] = Alchemist.Reagent:new(name, qty, traits, bag_id, slot_index)
+    self.reagents[reagent_name] = Alchemist.Reagent:new(reagent_name, qty, traits, bag_id, slot_index)
     
-    return self.reagents[name]
+    return self.reagents[reagent_name]
 end
 
  function Inventory:decrement_reagent_qty(reagent)
