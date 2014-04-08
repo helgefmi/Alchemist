@@ -30,18 +30,29 @@ local function get_best_combination(inventory, max_reagents)
         return
     end
 
+    local best_score = 0
     local best_combination
 
     reagent_names = inventory:get_reagent_names()
-    local reagent_names_combinations = Alchemist.Batteries.combinations(reagent_names, max_reagents)
-    for reagent_names in reagent_names_combinations do
+    local all_combinations = {}
+
+    for num_reagents = 2, max_reagents do
+        local combinations = Alchemist.Batteries.combinations(reagent_names, num_reagents)
+        for _, combination in pairs(combinations) do
+            table.insert(all_combinations, combination)
+        end
+    end
+
+    for _, reagent_names in pairs(all_combinations) do
         local reagents_combination = {}
         for _, reagent_name in pairs(reagent_names) do
             table.insert(reagents_combination, inventory:get_reagent(reagent_name))
         end
 
         local discoveries = get_discovered_traits(reagents_combination)
-        if not best_combination or #best_combination.discoveries < #discoveries then
+        local score = (#discoveries * 10) - #reagent_names
+        if score > best_score then
+            best_score = score
             best_combination = {
                 reagents = reagents_combination,
                 discoveries = discoveries,
@@ -49,7 +60,7 @@ local function get_best_combination(inventory, max_reagents)
         end
     end
 
-    if #best_combination.discoveries > 0 then
+    if best_combination and #best_combination.discoveries > 0 then
         return best_combination
     end
 end
