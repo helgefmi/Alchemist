@@ -12,10 +12,10 @@ Alchemist = {
 
 function Alchemist.initialize()
     Alchemist.listview = Unicorn.ListView.new(AlchemistControl, {
-        title = "Alchemist",
+        title = "Alchemist " .. Alchemist.version,
         width = 350,
         left = 970,
-        top = 40,
+        top = 60,
     })
 
     Alchemist.listview.control:SetHidden(true)
