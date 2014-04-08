@@ -20,6 +20,11 @@ The addon will activate as soon as you interact (click on) an Alchemy Station. W
 Changelog
 ---------
 
+### 0.05
+
+- Fixed errors in both french and german translation.
+- Made Alchemist send out error if we end up with more than 4 traits in total.
+
 ### 0.04
 
 - Fixed issues with both german and french translations of reagents and traits.
