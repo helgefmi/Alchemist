@@ -2,7 +2,6 @@
 
 ## Author: Helge Milde
 ## APIVersion: 100003
-## OptionalDependsOn: Unicorn
 
 ## Unicorn dependency
 lib/Unicorn/Unicorn.lua

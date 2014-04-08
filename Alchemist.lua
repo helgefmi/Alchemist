@@ -1,5 +1,5 @@
 Alchemist = {
-    version = 0.06,
+    version = 0.07,
     listview = nil,
 
     texts = {
