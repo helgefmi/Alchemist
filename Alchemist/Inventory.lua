@@ -299,7 +299,7 @@ local all_reagents = {
             "Diminue l'arme critique",
             "Diminue le sort critique",
         },
-        ["Mutinus Elégans"] = {
+        ["Mutinus Elegans"] = {
             "Augmente la puissance de l'arme",
             "Diminue l'armure",
             "Réduit la Santé",
