@@ -20,15 +20,19 @@ The addon will activate as soon as you interact (click on) an Alchemy Station. W
 Changelog
 ---------
 
+### 0.06
+
+- Alchemist now supports combinations of up to three reagents, if you have the passive "Laboratory Use" (*Allows the use of up to 3 reagents while mixing Potions.*)
+
 ### 0.05
 
 - Fixed errors in both french and german translation.
-- Made Alchemist send out error if we end up with more than 4 traits in total.
+- Better error messages when Alchemist finds traits that are spelled differently.
 
 ### 0.04
 
 - Fixed issues with both german and french translations of reagents and traits.
-- Added better error messages for when Alchemist finds reagents or traits that are spelled differently.
+- Better error messages when Alchemist finds reagents that are spelled differently.
 
 ### 0.03
 
@@ -48,6 +52,4 @@ TODO / ideas
 
 - Make it possible to click on the Alchemist window to automatically craft the selected item.
 
-- Support for 3 reagent combinations (for the "Laboratory Use" alchemy passive)
-
-You got another idea? Send me an email on helgefmi@gmail.com! Or something!
+You got another idea? Send me a message on [http://www.esoui.com/downloads/info120-Alchemist.html#comments](ESOUI)!
