@@ -31,7 +31,8 @@ end
 
 function Alchemist.print_combinations()
     local inventory = Alchemist.Inventory:new(ALCHEMY["inventory"])
-    combinations = Alchemist.Algorithm.get_optimal_combinations(inventory, 2)
+    local num_reagent_slots = Alchemist.get_num_reagent_slots()
+    combinations = Alchemist.Algorithm.get_optimal_combinations(inventory, num_reagent_slots)
     
     local mw = Alchemist.listview
     
@@ -62,6 +63,11 @@ function Alchemist.print_combinations()
             mw:add_message("")
         end
     end
+end
+
+function Alchemist.get_num_reagent_slots()
+    local has_three_slot = not ZO_AlchemyTopLevelSlotContainerReagentSlot3:IsControlHidden()
+    return has_three_slot and 3 or 2
 end
 
 function Alchemist.on_start_crafting(event_type, crafting_type)

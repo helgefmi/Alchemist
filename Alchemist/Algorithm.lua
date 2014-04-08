@@ -3,14 +3,17 @@ local function get_discovered_traits(reagents)
     local discoveries = {}
 
     for _, r1 in pairs(reagents) do
-        for _, r2 in pairs(reagents) do
-            if r1 ~= r2 then
-                for trait, discovered in pairs(r1.traits) do
-                    if r2.traits[trait] == false then
-                        table.insert(discoveries, {
-                            reagent = r2,
-                            trait = trait,
-                        })
+        for trait, discovered in pairs(r1.traits) do
+            if not discovered then
+                for _, r2 in pairs(reagents) do
+                    if r1 ~= r2 then
+                        if r2.traits[trait] ~= nil then
+                            table.insert(discoveries, {
+                                reagent = r1,
+                                trait = trait,
+                            })
+                            break
+                        end
                     end
                 end
             end
