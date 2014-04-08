@@ -148,7 +148,7 @@ local all_reagents = {
             "Kritische Waffentreffer",
         },
         ["Koboldschemel"] = {
-            "Reduziert Waffenkraft",
+            "Verringert Waffenkraft",
             "Erhöht Rüstung",
             "Ausdauerverwüstung",
             "Reduziert Kritische Waffentreffer",
@@ -162,7 +162,7 @@ local all_reagents = {
         ["Leuchttäubling"] = {
             "Ausdauerverwüstung",
             "Leben wiederherstellen",
-            "Reduziert Waffenkraft",
+            "Verringert Waffenkraft",
             "Reduziert Tempo",
         },
         ["Namiras Fäulnis"] = {
