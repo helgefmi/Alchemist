@@ -151,7 +151,7 @@ local all_reagents = {
             "Verringert Waffenkraft",
             "Erhöht Rüstung",
             "Ausdauerverwüstung",
-            "Reduziert Kritische Waffentreffer",
+            "Verringert kritische Waffentreffer",
         },
         ["Kornblume"] = {
             "Magicka wiederherstellen",
@@ -173,8 +173,8 @@ local all_reagents = {
         },
         ["Nirnwurz"] = {
             "Lebensverwüstung",
-            "Verringert Kritische Magietreffer",
-            "Verringert Kritische Waffentreffer",
+            "Verringert kritische Zaubertreffer",
+            "Verringert kritische Waffentreffer",
             "Unsichtbarkeit",
         },
         ["Stinkmorchel"] = {
@@ -199,7 +199,7 @@ local all_reagents = {
             "Verringert Magiekraft",
             "Magickaverwüstung",
             "Erhöht Magieresistenz",
-            "Reduziert Kritische Magietreffer",
+            "Verringert kritische Zaubertreffer",
         },
         ["Wermut"] = {
             "Kritische Waffentreffer",
