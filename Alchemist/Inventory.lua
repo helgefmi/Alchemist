@@ -1,335 +1,116 @@
 -- all reagents {{{
+local SI = Alchemist.SI
+
 local all_reagents = {
-    english = {
-        ["Blessed Thistle"] = {
-            "Restore Stamina",
-            "Increase Weapon Power",
-            "Speed",
-            "Ravage Health",
-        },
-        ["Blue Entoloma"] = {
-            "Restore Health",
-            "Invisible",
-            "Lower Spell Power",
-            "Ravage Magicka",
-        },
-        ["Bugloss"] = {
-            "Increase Spell Resist",
-            "Restore Health",
-            "Restore Magicka",
-            "Lower Spell Power",
-        },
-        ["Columbine"] = {
-            "Restore Health",
-            "Restore Stamina",
-            "Restore Magicka",
-            "Unstoppable",
-        },
-        ["Corn Flower"] = {
-            "Restore Magicka",
-            "Increase Spell Power",
-            "Detection",
-            "Ravage Health",
-        },
-        ["Dragonthorn"] = {
-            "Increase Weapon Power",
-            "Restore Stamina",
-            "Weapon Crit",
-            "Lower Armor",
-        },
-        ["Emetic Russula"] = {
-            "Ravage Health",
-            "Ravage Stamina",
-            "Ravage Magicka",
-            "Stun",
-        },
-        ["Imp Stool"] = {
-            "Increase Armor",
-            "Lower Weapon Power",
-            "Ravage Stamina",
-            "Lower Weapon Crit",
-        },
-        ["Lady's Smock"] = {
-            "Increase Spell Power",
-            "Restore Magicka",
-            "Spell Crit",
-            "Lower Spell Resist",
-        },
-        ["Luminous Russula"] = {
-            "Restore Health",
-            "Ravage Stamina",
-            "Lower Weapon Power",
-            "Reduce Speed",
-        },
-        ["Mountain Flower"] = {
-            "Increase Armor",
-            "Restore Health",
-            "Restore Stamina",
-            "Lower Weapon Power",
-        },
-        ["Namira's Rot"] = {
-            "Spell Crit",
-            "Invisible",
-            "Speed",
-            "Unstoppable",
-        },
-        ["Nirnroot"] = {
-            "Invisible",
-            "Ravage Health",
-            "Lower Weapon Crit",
-            "Lower Spell Crit",
-        },
-        ["Stinkhorn"] = {
-            "Increase Weapon Power",
-            "Lower Armor",
-            "Ravage Health",
-            "Ravage Stamina",
-        },
-        ["Violet Coprinus"] = {
-            "Increase Spell Power",
-            "Lower Spell Resist",
-            "Ravage Health",
-            "Ravage Magicka",
-        },
-        ["Water Hyacinth"] = {
-            "Restore Health",
-            "Weapon Crit",
-            "Spell Crit",
-            "Stun",
-        },
-        ["White Cap"] = {
-            "Increase Spell Resist",
-            "Lower Spell Power",
-            "Ravage Magicka",
-            "Lower Spell Crit",
-        },
-        ["Wormwood"] = {
-            "Weapon Crit",
-            "Detection",
-            "Unstoppable",
-            "Reduce Speed",
-        }
+    [SI.get(SI.BLESSED_THISTLE)] = {
+        SI.get(SI.INCREASE_WEAPON_POWER),
+        SI.get(SI.RAVAGE_HEALTH),
+        SI.get(SI.RESTORE_STAMINA),
+        SI.get(SI.SPEED),
     },
-    german = {
-        ["Akelei"] = {
-            "Leben wiederherstellen",
-            "Magicka wiederherstellen",
-            "Ausdauer wiederherstellen",
-            "Sicherer Stand",
-        },
-        ["Benediktenkraut"] = {
-            "Ausdauer wiederherstellen",
-            "Erhöht Waffenkraft",
-            "Lebensverwüstung",
-            "Tempo",
-        },
-        ["Bergblume"] = {
-            "Erhöht Rüstung",
-            "Leben wiederherstellen",
-            "Verringert Waffenkraft",
-            "Ausdauer wiederherstellen",
-        },
-        ["Blauer Glöckling"] = {
-            "Magickaverwüstung",
-            "Verringert Magiekraft",
-            "Leben wiederherstellen",
-            "Unsichtbarkeit",
-        },
-        ["Brechtäubling"] = {
-            "Lebensverwüstung",
-            "Magickaverwüstung",
-            "Ausdauerverwüstung",
-            "Betäubung",
-        },
-        ["Drachendorn"] = {
-            "Erhöht Waffenkraft",
-            "Ausdauer wiederherstellen",
-            "Verringert Rüstung",
-            "Kritische Waffentreffer",
-        },
-        ["Koboldschemel"] = {
-            "Verringert Waffenkraft",
-            "Erhöht Rüstung",
-            "Ausdauerverwüstung",
-            "Verringert kritische Waffentreffer",
-        },
-        ["Kornblume"] = {
-            "Magicka wiederherstellen",
-            "Erhöht Magiekraft",
-            "Lebensverwüstung",
-            "Detektion",
-        },
-        ["Leuchttäubling"] = {
-            "Ausdauerverwüstung",
-            "Leben wiederherstellen",
-            "Verringert Waffenkraft",
-            "Reduziert Tempo",
-        },
-        ["Namiras Fäulnis"] = {
-            "Kritische Zaubertreffer",
-            "Unsichtbarkeit",
-            "Tempo",
-            "Sicherer Stand",
-        },
-        ["Nirnwurz"] = {
-            "Lebensverwüstung",
-            "Verringert kritische Zaubertreffer",
-            "Verringert kritische Waffentreffer",
-            "Unsichtbarkeit",
-        },
-        ["Stinkmorchel"] = {
-            "Verringert Rüstung",
-            "Erhöht Waffenkraft",
-            "Lebensverwüstung",
-            "Ausdauerverwüstung",
-        },
-        ["Violetter Tintling"] = {
-            "Verringert Magieresistenz",
-            "Erhöht Magiekraft",
-            "Lebensverwüstung",
-            "Magickaverwüstung",
-        },
-        ["Wasserhyazinthe"] = {
-            "Leben wiederherstellen",
-            "Kritische Zaubertreffer",
-            "Kritische Waffentreffer",
-            "Betäubung",
-        },
-        ["Weißkappe"] = {
-            "Verringert Magiekraft",
-            "Magickaverwüstung",
-            "Erhöht Magieresistenz",
-            "Verringert kritische Zaubertreffer",
-        },
-        ["Wermut"] = {
-            "Kritische Waffentreffer",
-            "Reduziert Tempo",
-            "Detektion",
-            "Sicherer Stand",
-        },
-        ["Wiesenschaumkraut"] = {
-            "Erhöht Magiekraft",
-            "Magicka wiederherstellen",
-            "Verringert Magieresistenz",
-            "Kritische Zaubertreffer",
-        },
-        ["Wolfsauge"] = {
-            "Erhöht Magieresistenz",
-            "Leben wiederherstellen",
-            "Verringert Magiekraft",
-            "Magicka wiederherstellen",
-        }
+    [SI.get(SI.BLUE_ENTOLOMA)] = {
+        SI.get(SI.INVISIBLE),
+        SI.get(SI.LOWER_SPELL_POWER),
+        SI.get(SI.RAVAGE_MAGICKA),
+        SI.get(SI.RESTORE_HEALTH),
     },
-    french = {
-        ["Chardon Béni"] = {
-            "Rend de la Vigueur",
-            "Augmente la puissance de l'arme",
-            "Vitesse",
-            "Réduit la Santé",
-        },
-        ["Entoloma"] = {
-            "Rend de la Santé",
-            "invisible^z",
-            "Diminue la puissance des sorts",
-            "Réduit la Magie",
-        },
-        ["Noctuelle"] = {
-            "Augmente la résistance aux sorts",
-            "Rend de la Santé",
-            "Rend de la Magie",
-            "Diminue la puissance des sorts",
-        },
-        ["Ancolie"] = {
-            "Rend de la Santé",
-            "Rend de la Vigueur",
-            "Rend de la Magie",
-            "Implacable",
-        },
-        ["Bleuet"] = {
-            "Rend de la Magie",
-            "Augmente la puissance des sorts",
-            "de détection^z",
-            "Réduit la Santé",
-        },
-        ["Épine-de-Dragon"] = {
-            "Augmente la puissance de l'arme",
-            "Rend de la Vigueur",
-            "Arme critique",
-            "Diminue l'armure",
-        },
-        ["Russule Émétique"] = {
-            "Réduit la Santé",
-            "Réduit la Vigueur",
-            "Réduit la Magie",
-            "Sonne",
-        },
-        ["Pied-de-Lutin"] = {
-            "Augmente l'armure",
-            "Diminue la puissance de l'arme",
-            "Réduit la Vigueur",
-            "Diminue l'arme critique",
-        },
-        ["Cardamine des Prés"] = {
-            "Augmente la puissance des sorts",
-            "Rend de la Magie",
-            "Sort critique",
-            "Diminue la résistance aux sorts",
-        },
-        ["Russule Phosphorescente"] = {
-            "Rend de la Santé",
-            "Réduit la Vigueur",
-            "Diminue la puissance de l'arme",
-            "Réduit la vitesse",
-        },
-        ["Lys des Cimes"] = {
-            "Augmente l'armure",
-            "Rend de la Santé",
-            "Rend de la Vigueur",
-            "Diminue la puissance de l'arme",
-        },
-        ["Truffe de Namira"] = {
-            "Sort critique",
-            "invisible^z",
-            "Vitesse",
-            "Implacable",
-        },
-        ["Nirnrave"] = {
-            "invisible^z",
-            "Réduit la Santé",
-            "Diminue l'arme critique",
-            "Diminue le sort critique",
-        },
-        ["Mutinus Elegans"] = {
-            "Augmente la puissance de l'arme",
-            "Diminue l'armure",
-            "Réduit la Santé",
-            "Réduit la Vigueur",
-        },
-        ["Coprin Violet"] = {
-            "Augmente la puissance des sorts",
-            "Diminue la résistance aux sorts",
-            "Réduit la Santé",
-            "Réduit la Magie",
-        },
-        ["Jacinthe D'eau"] = {
-            "Rend de la Santé",
-            "Arme critique",
-            "Sort critique",
-            "Sonne",
-        },
-        ["Chapeau Blanc"] = {
-            "Augmente la résistance aux sorts",
-            "Diminue la puissance des sorts",
-            "Réduit la Magie",
-            "Diminue le sort critique",
-        },
-        ["Absinthe"] = {
-            "Arme critique",
-            "de détection^z",
-            "Implacable",
-            "Réduit la vitesse",
-        }
+    [SI.get(SI.BUGLOSS)] = {
+        SI.get(SI.INCREASE_SPELL_RESIST),
+        SI.get(SI.LOWER_SPELL_POWER),
+        SI.get(SI.RESTORE_HEALTH),
+        SI.get(SI.RESTORE_MAGICKA),
     },
+    [SI.get(SI.COLUMBINE)] = {
+        SI.get(SI.RESTORE_HEALTH),
+        SI.get(SI.RESTORE_MAGICKA),
+        SI.get(SI.RESTORE_STAMINA),
+        SI.get(SI.UNSTOPPABLE),
+    },
+    [SI.get(SI.CORN_FLOWER)] = {
+        SI.get(SI.DETECTION),
+        SI.get(SI.INCREASE_SPELL_POWER),
+        SI.get(SI.RAVAGE_HEALTH),
+        SI.get(SI.RESTORE_MAGICKA),
+    },
+    [SI.get(SI.DRAGONTHORN)] = {
+        SI.get(SI.INCREASE_WEAPON_POWER),
+        SI.get(SI.LOWER_ARMOR),
+        SI.get(SI.RESTORE_STAMINA),
+        SI.get(SI.WEAPON_CRIT),
+    },
+    [SI.get(SI.EMETIC_RUSSULA)] = {
+        SI.get(SI.RAVAGE_HEALTH),
+        SI.get(SI.RAVAGE_MAGICKA),
+        SI.get(SI.RAVAGE_STAMINA),
+        SI.get(SI.STUN),
+    },
+    [SI.get(SI.IMP_STOOL)] = {
+        SI.get(SI.INCREASE_ARMOR),
+        SI.get(SI.LOWER_WEAPON_CRIT),
+        SI.get(SI.LOWER_WEAPON_POWER),
+        SI.get(SI.RAVAGE_STAMINA),
+    },
+    [SI.get(SI.LADYS_SMOCK)] = {
+        SI.get(SI.INCREASE_SPELL_POWER),
+        SI.get(SI.LOWER_SPELL_RESIST),
+        SI.get(SI.RESTORE_MAGICKA),
+        SI.get(SI.SPELL_CRIT),
+    },
+    [SI.get(SI.LUMINOUS_RUSSULA)] = {
+        SI.get(SI.LOWER_WEAPON_POWER),
+        SI.get(SI.RAVAGE_STAMINA),
+        SI.get(SI.REDUCE_SPEED),
+        SI.get(SI.RESTORE_HEALTH),
+    },
+    [SI.get(SI.MOUNTAIN_FLOWER)] = {
+        SI.get(SI.INCREASE_ARMOR),
+        SI.get(SI.LOWER_WEAPON_POWER),
+        SI.get(SI.RESTORE_HEALTH),
+        SI.get(SI.RESTORE_STAMINA),
+    },
+    [SI.get(SI.NAMIRAS_ROT)] = {
+        SI.get(SI.INVISIBLE),
+        SI.get(SI.SPEED),
+        SI.get(SI.SPELL_CRIT),
+        SI.get(SI.UNSTOPPABLE),
+    },
+    [SI.get(SI.NIRNROOT)] = {
+        SI.get(SI.INVISIBLE),
+        SI.get(SI.LOWER_SPELL_CRIT),
+        SI.get(SI.LOWER_WEAPON_CRIT),
+        SI.get(SI.RAVAGE_HEALTH),
+    },
+    [SI.get(SI.STINKHORN)] = {
+        SI.get(SI.INCREASE_WEAPON_POWER),
+        SI.get(SI.LOWER_ARMOR),
+        SI.get(SI.RAVAGE_HEALTH),
+        SI.get(SI.RAVAGE_STAMINA),
+    },
+    [SI.get(SI.VIOLET_COPRINUS)] = {
+        SI.get(SI.INCREASE_SPELL_POWER),
+        SI.get(SI.LOWER_SPELL_RESIST),
+        SI.get(SI.RAVAGE_HEALTH),
+        SI.get(SI.RAVAGE_MAGICKA),
+    },
+    [SI.get(SI.WATER_HYACINTH)] = {
+        SI.get(SI.RESTORE_HEALTH),
+        SI.get(SI.SPELL_CRIT),
+        SI.get(SI.STUN),
+        SI.get(SI.WEAPON_CRIT),
+    },
+    [SI.get(SI.WHITE_CAP)] = {
+        SI.get(SI.INCREASE_SPELL_RESIST),
+        SI.get(SI.LOWER_SPELL_CRIT),
+        SI.get(SI.LOWER_SPELL_POWER),
+        SI.get(SI.RAVAGE_MAGICKA),
+    },
+    [SI.get(SI.WORMWOOD)] = {
+        SI.get(SI.DETECTION),
+        SI.get(SI.REDUCE_SPEED),
+        SI.get(SI.UNSTOPPABLE),
+        SI.get(SI.WEAPON_CRIT),
+    },
+
 }
 -- }}}
 
@@ -350,11 +131,8 @@ function Inventory:add_reagent(reagent_name, qty, known_traits, bag_id, slot_ind
     -- Adds a reagent to the current inventory. It will also add traits that we don't know about yet,
     -- and set them to "not discovered". This is indicated by the *value* in the `traits` table.
     local traits = {}
-    local lang = Alchemist.Multilingual.get_current_language()
 
-    assert(all_reagents[lang] ~= nil, string.format("'%s' is not a supported language.", lang))
-
-    local all_traits = all_reagents[lang][reagent_name]
+    local all_traits = all_reagents[reagent_name]
     assert(all_traits ~= nil and #all_traits == 4, string.format("'%s' is not a valid reagent.", reagent_name))
 
     for _, trait in pairs(all_traits) do

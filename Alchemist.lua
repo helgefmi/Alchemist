@@ -1,13 +1,6 @@
 Alchemist = {
-    version = 0.07,
+    version = 0.08,
     listview = nil,
-
-    texts = {
-        NO_DISCOVERIES_AVAILABLE = "No discoveries available.",
-        COMBINATIONS_AVAILABLE = "%d combination(s) available!",
-        COMBINE_THE_FOLLOWING = "Combine the following:",
-        TO_GET_THE_FOLLOWING_DISCOVERIES = ".. to discover the following:",
-    }
 }
 
 function Alchemist.initialize()
@@ -25,8 +18,6 @@ function Alchemist.initialize()
 
     EVENT_MANAGER:RegisterForEvent("Alchemist", EVENT_CRAFT_STARTED, Alchemist.on_craft_started)
     EVENT_MANAGER:RegisterForEvent("Alchemist", EVENT_CRAFT_COMPLETED, Alchemist.on_craft_completed)
-    
-    Alchemist.initialized = true
 end
 
 function Alchemist.print_combinations()
@@ -35,26 +26,25 @@ function Alchemist.print_combinations()
     combinations = Alchemist.Algorithm.get_optimal_combinations(inventory, num_reagent_slots)
     
     local mw = Alchemist.listview
+    local SI = Alchemist.SI
     
     mw:clear()
     mw.control:SetHidden(false)
 
-    local gettext = Alchemist.Multilingual.translate_text
-
     if #combinations == 0 then
-        mw:add_message(gettext(Alchemist.texts.NO_DISCOVERIES_AVAILABLE))
+        mw:add_message(SI.get(SI.NO_DISCOVERIES_AVAILABLE))
     else
-        mw:add_message(string.format(gettext(Alchemist.texts.COMBINATIONS_AVAILABLE), #combinations))
+        mw:add_message(string.format(SI.get(SI.COMBINATIONS_AVAILABLE), #combinations))
         mw:add_message("")
         for _, combination in pairs(combinations) do
-            mw:add_message(gettext(Alchemist.texts.COMBINE_THE_FOLLOWING))
+            mw:add_message(SI.get(SI.COMBINE_THE_FOLLOWING))
             
             table.sort(combination.reagents, function(a, b) return a.name < b.name end)
             for _, reagent in pairs(combination.reagents) do
                 mw:add_message("- |c00ff00" .. reagent.name)
             end
             
-            mw:add_message(gettext(Alchemist.texts.TO_GET_THE_FOLLOWING_DISCOVERIES))
+            mw:add_message(SI.get(SI.TO_GET_THE_FOLLOWING_DISCOVERIES))
             
             table.sort(combination.discoveries, function(a, b) return a.reagent.name < b.reagent.name end)
             for _, discovery in pairs(combination.discoveries) do
@@ -72,19 +62,7 @@ end
 
 function Alchemist.on_start_crafting(event_type, crafting_type)
     if crafting_type == CRAFTING_TYPE_ALCHEMY then
-        local supported_languages = {
-            english = true,
-            german = true,
-            french = true,
-        }
-
-        local current_language = Alchemist.Multilingual.get_current_language()
-        if not supported_languages[current_language] then
-            d("Alchemist is sorry, but your language is not supported as of yet.")
-            d("If you want this to be fixed, you could leave a message on http://www.esoui.com/downloads/info120-Alchemist.html")
-        else
-            Alchemist.print_combinations()
-        end
+        Alchemist.print_combinations()
     end
 end
 
