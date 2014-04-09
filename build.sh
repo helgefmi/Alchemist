@@ -8,7 +8,7 @@ cd "$PROJECT_DIR"
 pwd
 
 rm -rf build/
-mkdir build/Alchemist/
+mkdir build/Alchemist/ -p
 
 # root files
 cp -ar *.lua *.xml *.md MIT-LICENSE build/Alchemist/
