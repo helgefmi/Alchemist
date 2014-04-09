@@ -56,6 +56,8 @@ Changelog
 TODO / ideas
 ------------
 
+- Remember window position after relog.
+
 - Support three reagent combinations (for "Laboratory Use" passive). The code does support it, but the current algorithm is too slow (on slow computers.)
 
 - It would be nice if you could tell it what types of potions you are interested in creating, in a prioritized list, and let the mod see what's available and not.
