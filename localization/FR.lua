@@ -1,7 +1,7 @@
 local mkstr = ZO_CreateStringId
 local SI = Alchemist.SI
 
--- output texts
+-- texts
 mkstr(SI.NO_DISCOVERIES_AVAILABLE,          "Aucune découverte disponible.")
 mkstr(SI.COMBINATIONS_AVAILABLE,            "%d combinaisons disponibles")
 mkstr(SI.COMBINE_THE_FOLLOWING,             "Combinez ceci:")
