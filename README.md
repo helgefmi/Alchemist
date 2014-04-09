@@ -20,6 +20,16 @@ The addon will activate as soon as you interact (click on) an Alchemy Station. W
 Changelog
 ---------
 
+### 0.08
+
+- Complete rewrite of localization code. Should be easier to do translations for reagents and traits now.
+- Removed combinations of three reagents. Will put it back at some point, hopefully!
+
+### 0.07
+
+- Fixed yet another german translation error.
+- Fiddled some with the UI.
+
 ### 0.06
 
 - Alchemist now supports combinations of up to three reagents, if you have the passive "Laboratory Use" (*Allows the use of up to 3 reagents while mixing Potions.*)
@@ -45,6 +55,8 @@ Changelog
 
 TODO / ideas
 ------------
+
+- Support three reagent combinations (for "Laboratory Use" passive). The code does support it, but the current algorithm is too slow (on slow computers.)
 
 - It would be nice if you could tell it what types of potions you are interested in creating, in a prioritized list, and let the mod see what's available and not.
 
