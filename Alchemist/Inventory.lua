@@ -116,14 +116,12 @@ local all_reagents = {
 
 local Inventory = {}
 
-function Inventory:new(control)
+function Inventory.new()
     local self = {
         reagents = {}
     }
     setmetatable(self, { __index = Inventory })
     
-    self:populate_from_control(control)
-
     return self
 end
 
@@ -181,7 +179,7 @@ function Inventory:get_reagent_names()
 end
 
 function Inventory:populate_from_control(control)
-    -- populates self.reagents using ZO API.
+    -- populates self.reagents using GetAlchemyItemTraits().
     local list_data = control["list"]["data"]
     for _, list_item in pairs(list_data) do
         local type_id = list_item.typeId

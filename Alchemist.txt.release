@@ -10,9 +10,9 @@ lib/Unicorn/Unicorn/List.lua
 ## Alchemist
 Alchemist.lua
 Alchemist/Batteries.lua
-Alchemist/Multilingual.lua
+Alchemist/SI.lua
+localization/$(language).lua
 Alchemist/Reagent.lua
 Alchemist/Algorithm.lua
 Alchemist/Inventory.lua
-translations.lua
 Alchemist.xml

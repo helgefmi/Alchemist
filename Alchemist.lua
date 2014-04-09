@@ -21,9 +21,11 @@ function Alchemist.initialize()
 end
 
 function Alchemist.print_combinations()
-    local inventory = Alchemist.Inventory:new(ALCHEMY["inventory"])
+    local inventory = Alchemist.Inventory.new()
+    inventory:populate_from_control(ALCHEMY["inventory"])
+
     local num_reagent_slots = Alchemist.get_num_reagent_slots()
-    combinations = Alchemist.Algorithm.get_optimal_combinations(inventory, num_reagent_slots)
+    local combinations = Alchemist.Algorithm.get_optimal_combinations(inventory, num_reagent_slots)
     
     local mw = Alchemist.listview
     local SI = Alchemist.SI
@@ -56,8 +58,15 @@ function Alchemist.print_combinations()
 end
 
 function Alchemist.get_num_reagent_slots()
-    local has_three_slot = not ZO_AlchemyTopLevelSlotContainerReagentSlot3:IsControlHidden()
-    return has_three_slot and 3 or 2
+    --local has_three_slot = not ZO_AlchemyTopLevelSlotContainerReagentSlot3:IsControlHidden()
+    --return has_three_slot and 3 or 2
+    --
+    -- TODO: The current algorithm can't handle three slots, not sure why I didn't see that
+    -- before, but if you have all 18 reagents, there'll be (18 * 17 * 16) + (18 * 17) = 5202
+    -- combinations. My computer can handle that, but some computers will probably have a 
+    -- bad time!
+
+    return 2
 end
 
 function Alchemist.on_start_crafting(event_type, crafting_type)
