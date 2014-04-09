@@ -8,12 +8,14 @@ cd "$PROJECT_DIR"
 pwd
 
 rm -rf build/
-mkdir build/Alchemist/Alchemist -p
+mkdir build/Alchemist/
 
-cp -ar *.lua *.xml build/Alchemist/
-cp -ar Alchemist/*.lua build/Alchemist/Alchemist/
+# root files
+cp -ar *.lua *.xml *.md MIT-LICENSE build/Alchemist/
+# directories
+cp -ar Alchemist/ localization/ build/Alchemist/
+# Alchemist.txt
 cp -ar Alchemist.txt.release build/Alchemist/Alchemist.txt
-cp -ar *.md MIT-LICENSE build/Alchemist/
 
 mkdir build/Alchemist/lib
 cd ../Unicorn && ./build.sh && cd -
